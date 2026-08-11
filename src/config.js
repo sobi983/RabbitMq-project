@@ -21,8 +21,8 @@ export const config = {
   },
 
   campaignExchange: {
-    exchangeName: 'x.campaign.lead',
-    queue: 'q.campaign.lead',
-    routingKey: 'campaign.created',
+    exchangeName: process.env.EXCHANGE_NAME,
+    queue: process.env.QUEUE_NAME,
+    routingKey: process.env.ROUTING_KEY,
   }
 };

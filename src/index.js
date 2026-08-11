@@ -9,5 +9,4 @@ import { config } from './config.js';
 // retry queue: q.<domain>.retry.<delay>
 // dlq:         q.<domain>.dlq
 
-
 startConsumer({ exchange: config.campaignExchange.exchangeName, queue: config.campaignExchange.queue, routingKey: config.campaignExchange.routingKey }, campaignCreateLeads);
