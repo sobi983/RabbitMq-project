@@ -19,4 +19,10 @@ export const config = {
     username: process.env.MW_USERNAME || '',
     password: process.env.MW_PASSWORD || '',
   },
+
+  campaignExchange: {
+    exchangeName: 'x.campaign.lead',
+    queue: 'q.campaign.lead',
+    routingKey: 'campaign.created',
+  }
 };

@@ -1,5 +1,6 @@
 import { startConsumer } from './broker.js';
 import { campaignCreateLeads } from './handler/campaign.js';
+import { config } from './config.js';
 
 // vhost:       /<env>/<app>
 // exchange:    x.<domain>.<purpose>
@@ -9,4 +10,4 @@ import { campaignCreateLeads } from './handler/campaign.js';
 // dlq:         q.<domain>.dlq
 
 
-startConsumer({ exchange: 'x.campaign.lead', queue: 'q.campaign.lead', routingKey: 'campaign.created' }, campaignCreateLeads);
+startConsumer({ exchange: config.campaignExchange.exchangeName, queue: config.campaignExchange.queue, routingKey: config.campaignExchange.routingKey }, campaignCreateLeads);
