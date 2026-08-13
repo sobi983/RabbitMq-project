@@ -20,3 +20,23 @@ dlq:         q.<domain>.dlq
 <!-- For logging the success & error -->
 log/crm_error.log
 log/crm_success.log
+
+
+
+<!-- Server Side setup -->
+You can find the consumer side in /opt folder. Where the user that has priviledge to it is bidaya.
+
+Two users for the rabbitmq server is available
+1. bidaya_app
+2. admin_sobi
+
+Two vhosts 
+1. bidaya_uat
+2. bidaya_prod
+
+Also enabled the firewall on OS and allowed 5672 port only open for Producer server no other than that.
+
+<!-- Replay Script -->
+In case of messages failure they will go to dlq. To move the messages from dlq to .q, just run the script. 
+
+COMMAND:- node replay-script.js <dlq> <exchange> <routing-key>
