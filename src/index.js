@@ -8,5 +8,5 @@ import { config } from './config.js';
 // routing key: <entity>.<action>
 // retry queue: q.<domain>.retry.<delay>
 // dlq:         q.<domain>.dlq
-
+console.log(config?.amqp)
 startConsumer({ exchange: config.campaignExchange.exchangeName, queue: config.campaignExchange.queue, routingKey: config.campaignExchange.routingKey }, campaignCreateLeads);
