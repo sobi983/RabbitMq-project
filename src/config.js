@@ -1,6 +1,6 @@
 export const config = {
   amqp: {
-    url: `amqp://${process.env.AMQP_USERNAME || 'guest'}:${process.env.AMQP_PASSWORD || 'guest'}@${process.env.AMQP_HOST || 'localhost'}:${process.env.AMQP_PORT || 5672}/`,
+    url: `amqp://${process.env.AMQP_USERNAME || 'guest'}:${process.env.AMQP_PASSWORD || 'guest'}@${process.env.AMQP_HOST || 'localhost'}:${process.env.AMQP_PORT || 5672}/${process.env.AMQP_VHOST || ''}`,
   },
 
   prefetch: Number(process.env.PREFETCH || 1),
